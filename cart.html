@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wraper">
+      <div class="header">
+        <div class="logo"><img src="./images/images.png" /></div>
+        <div class="heading">
+          SHOPPER'S HEAVAN
+          <i class="fa-solid fa-store" onclick="moveToStore()"></i>
+        </div>
+        <div class="cart">
+          <a onclick="moveToCart()"><i class="fa-solid fa-cart-shopping"></i></a
+          ><span class="lab" id="lab"></span>
+        </div>
+      </div>
+      <div class="cartContainer">
+        <div class="cartItems">
+          <div class="row">
+            <li><a>Product</a></li>
+            <li><a>Price</a></li>
+            <li><a>Quantity</a></li>
+            <li><a>Total</a></li>
+          </div>
+          <div class="items" id="items"></div>
+        </div>
+        <div class="checkout">
+          <div class="borderDiv"></div>
+          <div class="totalDisplay">
+            <label for="total" class="total">CART TOTAL:</label>
+            <label for="price" class="price" id="price"></label>
+          </div>
+          <div class="text">
+            <p>SHIPPING AND TAXES CALCULATED AT CHECKOUT</p>
+          </div>
+          <div class="terms">
+            <input type="checkbox" /><label
+              >AGREE TO TERMS AND CONDITIONS</label
+            >
+          </div>
+          <div class="checkOutButton">
+            <button type="button">
+              CHECKOUT <i class="fa-solid fa-lock"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./js/javascript.js"></script>
+</html>
