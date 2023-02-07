@@ -269,10 +269,10 @@ i:hover {
     text-align: center;
 }
 .lab{
-    font-size: 13px;
+    font-size: 12px;
     border: 1px solid black;
-    border-radius: 50%;
-    padding: 3px;
+    border-radius: 43%;
+    padding: 4px;
     vertical-align: top;
 }
 .tot1{
@@ -291,5 +291,35 @@ i:hover {
 .continue a{
     text-decoration: none;
     color: black;
+    font-weight: 600;
+}
+.searchBar{
+    width: 30%;
+    display: flex;
+}
+.searchBar input{
+    width: 100%;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.searchIcon{
+    margin-top: 12px;
+    font-size: 19px;
+    position: absolute;
+    left: 56%;
+    color: #f7b9ae;
+}
+.navigationBar{
+    margin-top: 13px;
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+.navigationBar li{
+    list-style: none;
+}
+.navigationBar li a{
     font-weight: 600;
 }
