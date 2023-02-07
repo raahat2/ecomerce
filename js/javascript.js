@@ -56,19 +56,16 @@ function moveToStore(){
 
 function addToCart(id){
 let cartItems=getCart();
-console.log(cartItems);
-
 if(!cartItems){
   cartItems=[];
 }
-console.log(cartItems)
 const product=products.find(i=>i.id==id);
 if(product){
     let cart=cartItems.find((a)=>a.id==id)
     if(cart){
         cartItems=cartItems.map((b)=>{
             if(b.id==id){
-                const uQuantity=b.qauntity+1;
+                const uQuantity=b.quantity+1;
                 return{...b,quantity:uQuantity,total:b.price*uQuantity};
             } else{
                 return b;
@@ -85,6 +82,7 @@ if(product){
 
 sessionStorage.setItem("product",JSON.stringify(cartItems));
 updateInCart();
+cartCount();
 }
 
 function updateInCart(){
@@ -97,13 +95,13 @@ function updateInCart(){
     item.innerHTML="";
     cart.map((t)=>{
         let cartNode=` <div class="cartItem">
-       <div style="width: 14%;"> 
-       <div class="cartItemImage" id="prod"><img src="${t.image}"/></div>
+       <div  class="imageCont"> 
+       <div class="cartItemImage" id="prod"><img src="${t.image}"/><a class="remove" onclick="remove(${t.id})"><i class="fa-sharp fa-solid fa-xmark"></i></a></div>
        <div style=" text-align: center;margin-bottom: 9px;"><a href="#" class="titleCart">${t.title}</a></div>
-       <div class="removeBtn"><button class="remove" onclick="remove(${t.id})">remove</button></div>
+       
        </div>
         <div class="cartItemPrice">$${t.price}</div>
-        <div class="button1"><button id="subQuantity" onclick="reduce(${t.id})">-</button><label class="quant" id="qaunt">${t.quantity}</label><button id="addQuantity" onclick="add(${t.id})">+</button></div>
+        <div class="button1"><button id="subQuantity" ${t.quantity===1 ? "hidden":""} onclick="reduce(${t.id})">-</button><label class="quant" id="qaunt">${t.quantity}</label><button id="addQuantity" onclick="add(${t.id})">+</button></div>
         <div class="tot1"><label class="tot" >$${t.total.toFixed(2)}</label></div>
         </div>`
         item.innerHTML +=cartNode;
@@ -111,6 +109,7 @@ function updateInCart(){
 
 
  
+
  function add(id){
     let cart = getCart();
    
@@ -139,6 +138,7 @@ cart[i].total = cart[i].price * inputValue;
 if (cart[i].quantity <= 1) {
  cart[i].quantity = 1;
  cart[i].total = cart[i].price;
+ 
 }
 
     }
@@ -154,6 +154,7 @@ if (cart[i].quantity <= 1) {
     sessionStorage.setItem("product",JSON.stringify(filter));
     updateInCart();
     total()
+    cartCount()
   }
   function total(){
     let cart=getCart();
@@ -163,6 +164,9 @@ if (cart[i].quantity <= 1) {
     const sum=cart.reduce((accum,currValue)=>{
        return accum+=currValue.total;
     },0)
+    if(! document.getElementById("price")){
+        return
+    }
     document.getElementById("price").innerHTML="$"+sum.toFixed(2);
   }
   total()
