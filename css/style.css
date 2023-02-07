@@ -20,7 +20,8 @@ body{
 .header .heading{
     margin-top: 4px;
     font-size: 31px;
-    color: gray;
+    color: black;
+    margin-left: 20px;
 }
 .logo img{
     width: 70px;
@@ -31,7 +32,7 @@ body{
     font-size: 30px;
     margin-top: 10px;
     margin-right: 30px;
-    color: gray;
+    color: black;
 }
 .container{
     padding: 20px;
@@ -44,7 +45,7 @@ body{
     
 }
 .product{
-    padding: 13px;
+    padding: 20px;
    
     margin-top:4px;
     color: gray;
@@ -57,7 +58,6 @@ body{
     border-radius: 5px;
     box-shadow: 0px 0px 5px rgb(194, 190, 190);
     border:1px solid rgb(194, 190, 190);
-    cursor:grab;
     background-color: #fbece9;
 }
 .product .image{
@@ -77,7 +77,7 @@ body{
 }
 .title a{
     text-decoration: none;
-    color:#fbccc3;
+    color:#f59e8e;
     font-weight: 600;
 }
 .product .category{
@@ -98,16 +98,19 @@ body{
 .button button{
     border: none;
     padding: 10px;
-    color: grey;
-    background:#fbccc3;
-    border-radius: 4px;
+    background: black;
+    border-radius: 8px;
     box-shadow: 2px 0px 2px grey;
+    width: 100%;
+    color: white;
+    font-size: 16px;
+
 }
 button:hover {
     cursor:pointer;
 }
 i:hover {
-    cursor:grab;
+    cursor:pointer;
 }
 .description p {
     display: -webkit-box;
@@ -122,6 +125,7 @@ i:hover {
 }
 .cartItems{
     width: 74%;
+    padding: 11px;
 }
 
 .row{
@@ -131,34 +135,38 @@ i:hover {
     justify-content: space-around;
     width: 100%;
     height: 50px;
+    margin-bottom: 55px;
 }
 .row li{
     list-style: none;
-    font-size: 22px;
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 700;
+    color: #979292;
 }
+
 .checkout{
     width:26%;
     background-color: #fae8e5;
     position: sticky;
     top: 0;
-    height: 100%;
+    height: 840px;
 }
 .borderDiv{
-    width:50%;
-    margin-left: 24%;
-    margin-right: 24%;
+    width: 78%;
+    margin-left: 12%;
+    margin-right: 12%;
     height: 20px;
-    border-bottom: 10px solid black;
-    margin-top: 40px;
+    border-bottom: 6px solid black;
+    margin-top: 45px;
 }
 .totalDisplay{
-    margin-top: 100px;
+    margin-top: 70px;
     text-align: center;
  
 }
 .total{
-    font-size: 12px;
+    font-size: 15px;
+    font-weight: 500;
 }
 .price{
     font-size: 25px;
@@ -166,12 +174,19 @@ i:hover {
 }
 .text{
     text-align: center;
-    font-size: 8px;
+    font-size: 10px;
+    color: darkgrey;
+
 }
 .terms{
     text-align: center;
-    font-size: 10px;
+    font-size: 12px;
     margin-top: 22px;
+}
+.terms mark{
+    color:#f7ab9e ;
+    text-decoration: none;
+    background-color: #fae8e5;
 }
 .checkOutButton{
 
@@ -181,17 +196,20 @@ i:hover {
   
 }
 .checkOutButton button{
-    padding: 15px;
-    width: 125px;
+    padding: 18px;
     border: none;
     color: white;
     background-color: black;
-    border-radius: 5px;
+    border-radius: 32px;
     box-shadow: 0px 0px 5px grey;
+    width: 60%;
+    font-size: 18px;
 }
 .cartItemImage{
     height: 100px;
     text-align: center;
+    margin-bottom: 19px;
+    position: relative;
 }
 .cartItemImage img{
     height: 100%;
@@ -200,7 +218,8 @@ i:hover {
     display: flex;
     justify-content: space-around;
     margin-top: 25px;
-    margin-bottom: 30px;
+    margin-bottom: 55px;
+    
 }
 .button1{
     width: 17%;
@@ -212,7 +231,7 @@ i:hover {
     color: gray;
     background: white;
     border-radius: 2px;
-    font-size: 25px;
+    font-size: 28px;
 }
 .button1 input{
     width: 12%;
@@ -221,6 +240,9 @@ i:hover {
 .titleCart{
     font-size: 15px;
     color: gray;
+    line-height: 25px;
+    font-weight: 700;
+    text-decoration: none;
 }
 .tot{
     
@@ -229,15 +251,18 @@ i:hover {
 }
 .quant{
     width: 15px;
-    border: 1px solid gray;
-    padding: 5px;
+     padding: 20px;
+     font-size: 20px;
 
 }
 .remove{
     border: none;
-    color: gray;
+    color: rgb(80, 79, 79);
     background: white;
-    font-size: 15px;
+    font-size: 21px;
+    position: absolute;
+    right: 34px;
+    bottom: 101px;
 }
 .removeBtn{
   
@@ -245,7 +270,7 @@ i:hover {
 }
 .lab{
     font-size: 13px;
-    border: 1px solid gray;
+    border: 1px solid black;
     border-radius: 50%;
     padding: 3px;
     vertical-align: top;
@@ -256,4 +281,15 @@ i:hover {
 }
 .cartItemPrice{
     font-weight: 700;
+}
+.imageCont{
+    width: 14%;
+}
+.continue{
+    text-align: center;
+}
+.continue a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
 }
