@@ -1,16 +1,24 @@
+let loader=document.getElementById("loader");
+window.addEventListener("load", function(){
+    loader.style.display="none";
+})
 
 let products=[];
 let cartItems=[];
+let products1=[];
 async function getProducts(){
  await   fetch('https://fakestoreapi.com/products')
     .then(res=>res.json())
     .then(json=>{
         products=json;
        displayProducts()
+
     })
  
-  
+   
 }
+console.log(products)
+
 function getCart(){
     return getSessionStorage("product")
 }
@@ -20,6 +28,24 @@ function getSessionStorage(key){
         return JSON.parse(data);
     }
 }
+function addNode(product){
+    let productContainer=document.getElementById("productContainer");
+     productContainer.innerHTML="";
+     product.map((t) => {
+        let productNode=`
+         <div class="product" id="product${t.id}" >
+         <div class="image" id="prod"><img src="${t.image}"/></div>
+         <div class="title"><a href="#">${t.name}</a></div>
+         <div class="price">Price: $${t.price}</div>
+         <div class="rating"><div class="star"><i class="fa-solid fa-star"></i></div>${t.rating}/ 5</div><div class="count">(${t.count}) reviews</div>
+         <div class="category">Category: ${t.cat}</div>
+         <div class="description"><p>Description: ${t.des}</p></div>
+         <div class="button"><button type="button" onclick="addToCart(${t.id})">ADD TO CART</button></div>
+         </div>
+         
+        `
+         productContainer.innerHTML+=productNode;})
+  }
 
 function displayProducts(){
     let productContainer=document.getElementById("productContainer");
@@ -28,10 +54,11 @@ function displayProducts(){
     productContainer.innerHTML="";
     products.map((t) => {
        let productNode=`
-        <div class="product">
+        <div class="product" id="product${t.id}" >
         <div class="image" id="prod"><img src="${t.image}"/></div>
         <div class="title"><a href="#">${t.title}</a></div>
         <div class="price">Price: $${t.price}</div>
+        <div class="rating"><div class="star"><i class="fa-solid fa-star"></i></div>${t.rating.rate}/ 5</div><div class="count">(${t.rating.count}) reviews</div>
         <div class="category">Category: ${t.category}</div>
         <div class="description"><p>Description: ${t.description}</p></div>
         <div class="button"><button type="button" onclick="addToCart(${t.id})">ADD TO CART</button></div>
@@ -39,8 +66,10 @@ function displayProducts(){
         
        `
         productContainer.innerHTML+=productNode;
-        
+      let product={name:t.title,price:t.price ,ele:t.id,rating:t.rating.rate,des:t.description,cat:t.category,count:t.rating.count,image:t.image};     
+      products1.push(product)  
     });
+
 }
 
 getProducts()
@@ -94,14 +123,14 @@ function updateInCart(){
 
     item.innerHTML="";
     cart.map((t)=>{
-        let cartNode=` <div class="cartItem">
-       <div  class="imageCont"> 
+        let cartNode=` <div class="cartItem" id="cartItem${t.id}">
+       <div  class="imageCont" > 
        <div class="cartItemImage" id="prod"><img src="${t.image}"/><a class="remove" onclick="remove(${t.id})"><i class="fa-sharp fa-solid fa-xmark"></i></a></div>
        <div style=" text-align: center;margin-bottom: 9px;"><a href="#" class="titleCart">${t.title}</a></div>
        
        </div>
         <div class="cartItemPrice">$${t.price}</div>
-        <div class="button1"><button id="subQuantity" ${t.quantity===1 ? "hidden":""} onclick="reduce(${t.id})">-</button><label class="quant" id="qaunt">${t.quantity}</label><button id="addQuantity" onclick="add(${t.id})">+</button></div>
+        <div class="button1"><button id="subQuantity" ${t.quantity===1 ? "disabled":""} onclick="reduce(${t.id})">-</button><label class="quant" id="qaunt">${t.quantity}</label><button id="addQuantity" onclick="add(${t.id})">+</button></div>
         <div class="tot1"><label class="tot" >$${t.total.toFixed(2)}</label></div>
         </div>`
         item.innerHTML +=cartNode;
@@ -179,4 +208,57 @@ if (cart[i].quantity <= 1) {
     let display=document.getElementById("lab");
     display.innerHTML=count;
   }
+
+    let searchInput=document.getElementById("searchBarInput");
+  searchInput.addEventListener("keyup", (e) =>{
+    let value=e.target.value.toLowerCase();
+
+  products1.forEach(product=>{
+    let toBeSearched =JSON.stringify(product).toLowerCase();
+        let visible=toBeSearched.includes(value);
+
+
+        if(visible){
+        document.querySelector("#product"+product.ele).style.display="block";
+    
+        }
+        else{
+           document.querySelector("#product"+product.ele).style.display="none";
+         
+        }
+       
+     })
  
+    })
+function filter(){
+    let product=products1;
+    let option=document.getElementById("sortB");
+        if(option.value=='phtl'){
+         let c=product.sort((a,b)=>a.price < b.price ? 1 : -1)
+         addNode(c);
+     }
+       if(option.value=='plth'){
+        let c=product.sort((a,b)=>a.price > b.price ? 1 : -1)
+        addNode(c);
+    
+    }
+         if(option.value=='rhtl'){
+            let c=product.sort((a,b)=>a.rating < b.rating ? 1 : -1)
+            addNode(c);
+          
+    }
+         if(option.value=='rlth'){
+            let c=product.sort((a,b)=>a.rating > b.rating ? 1 : -1)
+            addNode(c);
+        
+    }
+    else{
+  return;
+    }
+  
+        }
+        
+   
+     
+    
+  
