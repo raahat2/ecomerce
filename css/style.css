@@ -16,12 +16,20 @@ body{
     background-color: #fae8e5;
     display: flex;
     justify-content: space-between;
+    padding: 8px;
 }
 .header .heading{
     margin-top: 4px;
     font-size: 31px;
     color: black;
     margin-left: 20px;
+}
+.sortBy select{
+    margin-top: 9px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid black;
 }
 .logo img{
     width: 70px;
@@ -33,6 +41,7 @@ body{
     margin-top: 10px;
     margin-right: 30px;
     color: black;
+    position: relative;
 }
 .container{
     padding: 20px;
@@ -46,12 +55,13 @@ body{
 }
 .product{
     padding: 20px;
-   
+    border:1px solid white;
     margin-top:4px;
     color: gray;
   
     display: grid;
     height: auto;
+    
    
 }
 .product:hover{
@@ -85,7 +95,7 @@ body{
     margin-bottom:4px;
 }
 .product .price{
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 4px;
 }
 .product .description{
@@ -269,11 +279,19 @@ i:hover {
     text-align: center;
 }
 .lab{
+    font-weight: 900;
     font-size: 12px;
-    border: 1px solid black;
-    border-radius: 43%;
-    padding: 4px;
-    vertical-align: top;
+    border: 1px solid #fab6aa;
+    background: #fab6aa;
+    border-radius: 50%;
+    padding: 6px;
+    position: absolute;
+    bottom: 21px;
+    left: 26px;
+    display: grid;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
 }
 .tot1{
     width: 6%;
@@ -303,23 +321,112 @@ i:hover {
     margin-top: 10px;
     margin-bottom: 10px;
     position: relative;
+    border-radius: 3px;
+    border: 1px solid black;
+   
 }
 .searchIcon{
-    margin-top: 12px;
-    font-size: 19px;
+    margin-top: 9px;
+    font-size: 22px;
+    color: black;
     position: absolute;
-    left: 56%;
-    color: #f7b9ae;
+    left: 56.5%;
 }
 .navigationBar{
-    margin-top: 13px;
-    width: 20%;
     display: flex;
     justify-content: space-between;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 .navigationBar li{
     list-style: none;
+    margin-right: 20px;
 }
 .navigationBar li a{
     font-weight: 600;
+}
+a:hover {
+    cursor:pointer;
+}
+.footer{
+    background-color: #fae8e5;
+ 
+    justify-content: space-around;
+ 
+    display: grid;
+ 
+
+
+}
+.icons{
+    display: flex;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    height: 47px;
+    justify-content: center;
+}
+.icons p{
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.icons .fb{
+   
+    color: #4867aa;
+    border: 3px solid #4867aa;
+    border-radius: 50%;
+    padding: 7px;
+    margin-left: 10px;
+}
+.icons .google{
+   
+    color: #e94235;
+    border: 3px solid #e94235;
+    border-radius: 50%;
+    padding: 7px;
+}
+.icons .inst{
+  
+    color: #f70265;
+    border: 3px solid #f70265;
+    border-radius: 50%;
+    padding: 7px;
+}
+.rating{
+    display: flex;
+    font-size: 17px;
+    font-weight: 700;
+}
+.rating .star{
+    color: gold;
+    margin-right: 5px;
+}
+.count{
+    font-weight: 600;
+}
+.navigationBar1{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 35px;
+}
+.navigationBar1 li{
+    list-style: none;
+    margin-right: 20px;
+}
+.navigationBar1 li a{
+    font-weight: 600;
+}
+.onLoading{
+    width: 100%;
+    height: 900px;
+    background: black url(/images/loader.gif) no-repeat center center;
+    background-size: 20%;
+    position: fixed;
+    z-index: 100;
+
 }
