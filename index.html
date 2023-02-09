@@ -36,14 +36,33 @@
         </div>
       </div>
       <div class="container">
-        <div class="sortBy">
-          <select value="Sort By" id="sortB" onclick="filter()">
-            <option disabled selected>Sort By</option>
-            <option value="plth">Price low to high</option>
-            <option value="phtl">Price high to low</option>
-            <option value="rlth">Ratings low to high</option>
-            <option value="rhtl">Ratings high to low</option>
-          </select>
+        <div class="sort">
+          <div class="sortBy">
+            <select value="Sort By" id="sortB" onchange="filter()">
+              <option disabled selected>Sort By</option>
+              <option value="plth">Price low to high</option>
+              <option value="phtl">Price high to low</option>
+              <option value="rlth">Ratings low to high</option>
+              <option value="rhtl">Ratings high to low</option>
+            </select>
+          </div>
+          <div class="sortBy">
+            <select value="Sort By" id="sortC" onchange="filterByPrice()">
+              <option disabled selected>Sort By price</option>
+              <option value="0-100">0 to 100</option>
+              <option value="100-500">100-500</option>
+              <option value="500-1000">500 to 1000</option>
+            </select>
+          </div>
+          <div class="sortBy">
+            <select value="Sort By" id="sortD" onchange="filterByPrice()">
+              <option disabled selected>Sort By rating</option>
+              <option value="4">4 & above</option>
+              <option value="3">3 & above</option>
+              <option value="2">2 & above</option>
+              <option value="1">below 2</option>
+            </select>
+          </div>
         </div>
         <div class="productContainer" id="productContainer"></div>
       </div>
