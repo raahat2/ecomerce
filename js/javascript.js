@@ -1,6 +1,6 @@
 let loader=document.getElementById("loader");
 window.addEventListener("load", function(){
-    loader.style.display="none";
+    loader.style.display="block";
 })
 
 let products=[];
@@ -12,6 +12,7 @@ async function getProducts(){
     .then(json=>{
         products=json;
        displayProducts()
+       loader.style.display="none";
 
     })
  
