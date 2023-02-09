@@ -17,7 +17,6 @@ async function getProducts(){
  
    
 }
-console.log(products)
 
 function getCart(){
     return getSessionStorage("product")
@@ -258,7 +257,73 @@ function filter(){
   
         }
         
-   
+   function filterByPrice(){
+    let filtered=[];
+    let optionP=document.getElementById("sortC");
+    let optionR=document.getElementById("sortD");
+    let product=products1;
+    if(optionR.value=="4"){
+        filtered= product.filter((a)=>a.rating >= 4)
+          addNode(filtered)
+      }
+     if(optionR.value=="3"){
+      filtered= product.filter((a)=>a.rating >= 3 && a.rating<4)
+           addNode(filtered)
+       }
+     if( optionR.value=="2"){
+      filtered= product.filter((a)=>a.rating >= 2 && a.rating<3)
+           addNode(filtered)
+       }
+     if(optionR.value=="1"){
+      filtered= product.filter((a)=>a.rating >= 1 && a.rating<2)
+           addNode(filtered)
+       }
+    if(optionP.value=="0-100"){
+        filtered= product.filter((a)=>a.price>0 && a.price <= 100)
+        addNode(filtered)
+        filterByRating(filtered)
+    }
+    if(optionP.value=="100-500"){
+         filtered= product.filter((a)=>a.price>100 && a.price <= 500)
+         addNode(filtered)
+         filterByRating(filtered)
+     }
+     if(optionP.value=="500-1000"){
+        filtered= product.filter((a)=>a.price>500 && a.price <= 1000)
+        addNode(filtered)
+        filterByRating(filtered)
+     }
+    
+     else{
+        return;
+     }
+
+
+    
      
+   }
+     function filterByRating(f){
+        let optionR=document.getElementById("sortD");
+
+        if(f && optionR.value=="4"){
+          let  updatedFiltered= f.filter((a)=>a.rating >= 4)
+            addNode(updatedFiltered)
+        }
+       if(f && optionR.value=="3"){
+        let  updatedFiltered= f.filter((a)=>a.rating >= 3 && a.rating<4)
+             addNode(updatedFiltered)
+         }
+       if( f && optionR.value=="2"){
+        let  updatedFiltered= f.filter((a)=>a.rating >= 2 && a.rating<3)
+             addNode(updatedFiltered)
+         }
+       if(f && optionR.value=="1"){
+        let  updatedFiltered= f.filter((a)=>a.rating >= 1 && a.rating<2)
+             addNode(updatedFiltered)
+         }
+         else{
+            return;
+         }
+     }
     
   
