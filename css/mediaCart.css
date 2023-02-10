@@ -1,0 +1,241 @@
+@media only screen and (max-width: 1024px){
+    .header .heading{
+        font-size: 24px;
+        margin-top: 7px;
+    }
+    .cart {
+        font-size: 24px;
+    }
+    .navigationBar li {
+        font-size: 13px;
+    }
+    .searchBar input {
+        padding: 5px;
+    }
+    .searchIcon {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 912px){
+    .header .heading {
+        font-size: 18px;
+        margin-top: 11px;
+    }
+    
+    .searchIcon {
+         left: 52.5%;
+    }}
+    @media only screen and (max-width: 821px){
+        .header .heading {
+            font-size: 14px;
+            margin-top:10px;
+        }
+            .searchBar input {
+                padding: 2px;
+            }
+            .searchIcon {
+                font-size: 16px;
+                left: 51%;
+            }
+            .navigationBar li {
+                font-size: 11px;
+            }
+            .cart {
+                font-size: 19px;
+            }
+            .lab {
+             font-size: 10px;
+                 padding: 3px;
+                 bottom: 18px;
+                left: 15px;
+                 width: 20px;
+                height: 20px;
+            }
+            .row li {
+                font-size: 11px;
+            }
+            .remove {
+                font-size: 16px;
+                left: 77px;
+            }
+            .cartItemImage {
+                height: 84px;
+            }          
+            .titleCart {
+                font-size: 11px;
+            } 
+            .cartItemPrice {
+                font-size: 12px;
+            }
+            .button1 button {
+                font-size: 18px;
+            }
+            .quant {
+                font-size: 16px;
+            }
+            .tot1 {
+                font-size: 13px;
+            }
+            .borderDiv {
+                border-bottom: 4px solid black;
+            }
+            .total {
+                font-size: 12px;
+            }
+            .price {
+                font-size: 15px;
+            }
+            .text {
+                font-size: 8px;
+            }
+            .terms {
+                font-size: 10px;
+                margin-top: 17px;
+            }
+            .checkOutButton button {
+                padding: 10px;
+                width: 93%;
+                font-size: 13px;
+            }
+            .continue a {
+                font-size: 12px;
+            }
+            .navigationBar1 {
+                margin-top: 18px;
+                font-size: 12px;
+            }
+            .icons {
+                font-size: 14px;
+                height: 39px;
+            }
+            .icons p {
+                font-size: 15px;
+            }
+            
+            
+            
+        }
+        @media only screen and (max-width: 540px){
+            
+            .header .heading {
+                margin-top: 3px;
+                margin: 0px;
+            }
+            .searchBar input {
+                padding: 2px;
+                width: 88%;
+            }
+            .searchIcon {
+                font-size: 16px;
+                left: 34%;
+            }
+            .navigationBar{
+                width: 73%;
+            }
+            .onLoading {
+                width: 100%;
+                height: 100%;
+            }
+            .onLoading label {
+                font-size: 13px;
+            }
+            .onLoading label {
+                top: 51%;
+                left: 43.5%;
+                font-size: 16px;
+            }
+        }
+        @media only screen and (max-width: 426px){
+            .header {
+                display: block;
+            }
+            .onLoading {
+                width: 100%;
+                height: 100%;
+            }
+            .header .heading {
+                margin: 0px;
+                font-size: 19px;
+                text-align: center;
+            }
+            .searchBar {
+                width: 100%;
+            }
+            .searchBar input {
+                padding: 4px;
+                font-size: 12px;
+                width: 100%;
+            }
+            .searchIcon {
+                font-size: 17px;
+                left: 93%;
+            }
+            .navigationBar {
+                justify-content: space-evenly;
+                width: 100%;
+            }
+            .navigationBar li {
+                font-size: 14px;
+            }
+            .cart {
+                font-size: 19px;
+                text-align: end;
+                margin-top: 21px;
+            }
+            .lab{
+                left: 98%;
+            }
+            .cartContainer {
+                display: block;
+            }
+            .cartItems {
+                width: 100%;
+                padding: 11px;
+            }
+            .row {
+                margin-bottom: 0px;
+            }
+            .cartItemImage {
+                height: 70px;
+            }
+            .titleCart {
+                font-size: 10px;
+                line-height: 0px;
+            }
+            .remove {
+                font-size: 14px;
+                left: 59px;
+                bottom: 67px;
+            }
+            .quant {
+                font-size: 12px;
+                padding: 9px;
+            }
+            .button1 button {
+                font-size: 17px;
+            }
+            .tot1 {
+                font-size: 12px;
+            }
+            .checkout {
+                width: 100%;
+                height: auto;
+            }
+            .borderDiv {
+                margin-top: 0px; 
+            }
+            .totalDisplay {
+                margin-top: 15px;
+            }
+            .checkOutButton {
+                margin-top: 29px;
+                margin-bottom: 32px;
+            }
+            .continue {
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            
+            
+        }
